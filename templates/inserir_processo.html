@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gestão de Processos</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='insercao_processo.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+    <!-- ESSENCIAL! -->
+  </head>
+  <body>
+    <header>
+      <h1>Gestão de Processos</h1>
+      <div class="user-area">
+        <span>Olá, {{ current_user.nome }}</span>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+      </div>
+    </header>
+
+    <nav>
+      <button onclick="mostrarSecao('cadastro')">Cadastrar Processo</button>
+      <button onclick="mostrarSecao('listar')">Listar Processos</button>
+    </nav>
+
+    <section id="cadastro" class="secao">
+      <h2>Cadastrar Processo</h2>
+      <form id="form-processo">
+        <label>Número:</label>
+        <input type="text" id="numero" required />
+
+        <label>Descrição:</label>
+        <input type="text" id="descricao" required />
+
+        <label>Data Início:</label>
+        <input type="date" id="data_inicio" required />
+
+        <label>Data Fim:</label>
+        <input type="date" id="data_fim" required />
+
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+
+    <section id="listar" class="secao" style="display: none">
+      <h2>Lista de Processos</h2>
+      <div id="processo-visualizacao"></div>
+      <div class="navegacao-botoes">
+        <button onclick="mostrarAnterior()">← Anterior</button>
+        <button onclick="mostrarProximo()">Próximo →</button>
+      </div>
+    </section>
+  </body>
+</html>
