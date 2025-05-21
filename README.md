@@ -142,9 +142,3 @@ python app.py
 ```
 
 ---
-
-Se precisar de ajuda para ajustar o código para usar Flask-SQLAlchemy exclusivamente ou para configurar múltiplos bancos, posso ajudar!
-
----
-
-# FIM
